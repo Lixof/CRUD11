@@ -1,5 +1,7 @@
 package web.models;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 
 @Entity
@@ -8,6 +10,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GenericGenerator(name = "increment", strategy = "increment")
     private int id;
 
     @Column(name = "name")
